@@ -8,7 +8,7 @@ import com.timer.model.TimerStatus;
 import com.timer.services.TimerService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Matchers;
+import org.mockito.ArgumentMatchers;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -39,7 +39,7 @@ public class TimerControllerTest {
 
   @Test
   public void setTimer_validBody_success() throws Exception {
-    Mockito.when(timerService.setTimer(Matchers.any())).thenReturn("1");
+    Mockito.when(timerService.setTimer(ArgumentMatchers.any())).thenReturn("1");
 
     RequestBuilder requestBuilder = MockMvcRequestBuilders
         .post(REST_URL)
@@ -55,7 +55,7 @@ public class TimerControllerTest {
 
   @Test
   public void setTimer_negativeHours_failure() throws Exception {
-    Mockito.when(timerService.setTimer(Matchers.any())).thenReturn("1");
+    Mockito.when(timerService.setTimer(ArgumentMatchers.any())).thenReturn("1");
 
     RequestBuilder requestBuilder = MockMvcRequestBuilders
         .post(REST_URL)
@@ -71,7 +71,7 @@ public class TimerControllerTest {
 
   @Test
   public void setTimer_negativeMinutes_failure() throws Exception {
-    Mockito.when(timerService.setTimer(Matchers.any())).thenReturn("1");
+    Mockito.when(timerService.setTimer(ArgumentMatchers.any())).thenReturn("1");
 
     RequestBuilder requestBuilder = MockMvcRequestBuilders
         .post(REST_URL)
@@ -86,7 +86,7 @@ public class TimerControllerTest {
 
   @Test
   public void setTimer_negativeSeconds_failure() throws Exception {
-    Mockito.when(timerService.setTimer(Matchers.any())).thenReturn("1");
+    Mockito.when(timerService.setTimer(ArgumentMatchers.any())).thenReturn("1");
 
     RequestBuilder requestBuilder = MockMvcRequestBuilders
         .post(REST_URL)
